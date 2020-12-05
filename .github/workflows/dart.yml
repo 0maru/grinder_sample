@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 2
-    container:
-      image:  google/dart:latest
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
@@ -20,4 +18,4 @@ jobs:
           channel: 'stable'
       - run: flutter pub get
       - name: test
-        run: dart tool/grind.dart
+        run: dart tool/grind.dart analyze
